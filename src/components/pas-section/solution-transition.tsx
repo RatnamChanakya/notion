@@ -43,18 +43,16 @@ export function SolutionTransition() {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="hidden sm:block"
+            className="w-full text-center px-4 sm:px-6 lg:px-8"
             viewport={{ once: true }}
             transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
-            className="text-center w-full px-4 sm:px-6 lg:px-8"
           >
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
-              className="hidden sm:block"
+              className="max-w-7xl mx-auto relative"
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="relative max-w-7xl mx-auto"
             >
               <div className="absolute -inset-x-8 -inset-y-4 bg-gradient-to-r from-pink-500/10 via-violet-500/10 to-pink-500/10 blur-xl rounded-2xl" />
               <h2 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-none">
@@ -71,10 +69,9 @@ export function SolutionTransition() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="hidden sm:block"
+            className="w-full mt-12 text-center px-4 sm:px-6 lg:px-8"
             viewport={{ once: true }}
             transition={{ delay: 0.6 }}
-            className="mt-12 w-full text-center px-4 sm:px-6 lg:px-8"
           >
             <motion.button
               onClick={scrollToPricing}

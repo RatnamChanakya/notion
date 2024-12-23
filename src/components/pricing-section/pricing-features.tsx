@@ -1,10 +1,14 @@
 import { createElement } from 'react';
 import { motion } from 'framer-motion'; 
-import { Check, Crown, Rocket, Shield, RefreshCw } from 'lucide-react';
+import { Crown, Rocket, Shield, RefreshCw } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { PRICING_FEATURES } from './constants';
 
-const FEATURE_ICONS = {
+type FeatureIconMap = {
+  [key: string]: typeof Crown | typeof Rocket | typeof Shield | typeof RefreshCw;
+};
+
+const FEATURE_ICONS: FeatureIconMap = {
   "Full PLR Rights": Crown,
   "Ready to Sell": Rocket,
   "Premium Quality": Shield,
@@ -20,6 +24,7 @@ export function PricingFeatures() {
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
   return (
     <div className="grid sm:grid-cols-2 gap-4">
       {PRICING_FEATURES.map((feature, index) => (

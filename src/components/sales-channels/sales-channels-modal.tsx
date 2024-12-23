@@ -4,8 +4,8 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useState } from 'react';
 import { 
-  Store, ShoppingBag, Globe, Rocket, BookOpen, Users, 
-  Mail, Video, Smartphone, MessageSquare, Target, Zap,
+  Store, Globe, BookOpen, Users, 
+  Mail, Video, Target, Zap,
   DollarSign, Briefcase, BarChart, Gift
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';

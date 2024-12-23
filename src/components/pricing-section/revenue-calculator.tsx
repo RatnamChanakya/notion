@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { DollarSign, Calculator } from 'lucide-react';
+import { Calculator } from 'lucide-react';
 import { Slider } from '@/components/ui/slider';
+import { motion } from 'framer-motion';
 import { useCurrency } from '@/lib/currency-context';
 
 export function RevenueCalculator() {
-  const { currency, formatPrice } = useCurrency();
+  const { formatPrice } = useCurrency();
   const [price, setPrice] = useState(97);
   const [dailySales, setDailySales] = useState(5);
 

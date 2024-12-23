@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { TEMPLATES } from './templates';
-import { Badge } from '@/components/ui/badge';
 import { Star } from 'lucide-react';
 
 const container = {

@@ -39,26 +39,31 @@ export function TemplateShowcase() {
           {/* View Full List Button */}
           <div className="flex justify-center mt-12">
             <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <motion.button
+              <motion.div
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => {
-                  const pricingSection = document.getElementById('pricing');
-                  if (pricingSection) {
-                    pricingSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-                className="group w-full inline-flex items-center justify-center gap-2 px-8 py-4 text-lg rounded-lg bg-gradient-to-r from-pink-500 to-violet-600 text-white font-medium shadow-lg shadow-pink-500/25 hover:shadow-pink-500/40 transition-all duration-300"
+                className="relative w-full sm:w-auto group"
               >
-                Get All Templates
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
-              </motion.button>
+                <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 to-violet-600 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-200" />
+                <button
+                  onClick={() => {
+                    const pricingSection = document.getElementById('pricing');
+                    if (pricingSection) {
+                      pricingSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className="relative w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-lg rounded-xl bg-gradient-to-r from-pink-500 to-violet-600 hover:from-pink-600 hover:to-violet-700 text-white font-medium shadow-lg shadow-pink-500/25 hover:shadow-pink-500/40 transition-all duration-300"
+                >
+                  Get All Templates
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
+                </button>
+              </motion.div>
               
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setShowTemplateList(true)}
-                className="group w-full inline-flex items-center justify-center gap-2 px-8 py-4 text-lg rounded-lg bg-white/10 text-white font-medium border border-white/20 hover:bg-white/20 transition-all duration-300"
+                className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-lg rounded-xl bg-white/10 text-white font-medium border border-white/20 hover:bg-white/20 transition-all duration-300"
               >
                 Browse Full List
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />

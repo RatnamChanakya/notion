@@ -1,6 +1,5 @@
 import { LazyMotion, domAnimation, m as motion } from 'framer-motion';
-import { AlertTriangle, TrendingDown, DollarSign, Clock, Users } from 'lucide-react';
-import { MarketReality } from './market-reality';
+import { AlertTriangle, TrendingDown, DollarSign, Users } from 'lucide-react';
 import { ProblemPoints } from './problem-points';
 
 const MARKET_TRENDS = [

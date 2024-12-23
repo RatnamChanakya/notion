@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Gift } from 'lucide-react';
 import type { Bonus } from './types';
-import { cn } from '@/lib/utils';
 
 interface BonusCardProps {
   bonus: Bonus;
@@ -13,7 +12,7 @@ const item = {
   show: { opacity: 1, y: 0 }
 };
 
-export function BonusCard({ bonus, index }: BonusCardProps) {
+export function BonusCard({ bonus }: BonusCardProps) {
   return (
     <motion.div
       variants={item}

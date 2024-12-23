@@ -5,7 +5,7 @@ import { SOLUTION_FEATURES } from './constants';
 import { ComparisonTable } from './comparison-table';
 import { useCallback } from 'react';
 
-const FEATURE_ICONS = {
+const FEATURE_ICONS: Record<string, typeof Package | typeof Crown | typeof Rocket> = {
   "500+ Templates": Package,
   "Full PLR Rights": Crown,
   "Ready to Sell Today": Rocket

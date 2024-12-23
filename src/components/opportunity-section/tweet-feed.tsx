@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { TweetCard } from './tweet-card';
 
 const TWEETS = [

@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { Users, TrendingUp, Globe } from 'lucide-react';
-import { TeamMembers } from './team-members';
 import { cn } from '@/lib/utils';
 
 const STATS = [

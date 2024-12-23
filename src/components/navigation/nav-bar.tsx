@@ -1,5 +1,4 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { MobileMenu } from './mobile-menu';
 import { NAV_ITEMS } from './constants';
@@ -42,7 +41,7 @@ export function NavBar() {
 
           {/* Desktop Navigation */}
           <nav className="hidden sm:flex items-center space-x-8 h-full">
-            {NAV_ITEMS.map((item, index) => (
+            {NAV_ITEMS.map((item) => (
               <a
                 key={item.href}
                 href={item.href}

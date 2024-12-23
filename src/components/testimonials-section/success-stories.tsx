@@ -1,7 +1,5 @@
 import { motion } from 'framer-motion';
 import { AvatarImage, AvatarFallback, Avatar } from '@/components/ui/avatar';
-import { DollarSign } from 'lucide-react';
-import { cn } from '@/lib/utils';
 
 const container = {
   hidden: { opacity: 0 },

@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { Slider } from '@/components/ui/slider';
 import { cn } from '@/lib/utils';
 import { PRICING_TIERS } from './constants';
@@ -8,12 +7,19 @@ interface PricingSliderProps {
   onChange: (value: number) => void;
 }
 
+type PricingTier = {
+  templates: number;
+  price: number;
+  label: string;
+};
+
 export function PricingSlider({ value, onChange }: PricingSliderProps) {
   // Find nearest tier for any value
-  const getNearestTier = (val: number) => {
-    return PRICING_TIERS.reduce((prev, curr) => {
-      return Math.abs(curr.templates - val) < Math.abs(prev.templates - val) ? curr : prev;
-    });
+  const getNearestTier = (val: number): PricingTier => {
+    const allTiers = Object.values(PRICING_TIERS).flat();
+    return allTiers.reduce((prev, curr) => 
+      Math.abs(curr.templates - val) < Math.abs(prev.templates - val) ? curr : prev
+    );
   };
 
   const handleChange = (newValue: number[]) => {
@@ -27,7 +33,7 @@ export function PricingSlider({ value, onChange }: PricingSliderProps) {
     <div className="w-full max-w-xl mx-auto space-y-8">
       {/* Tier Markers */}
       <div className="flex justify-between relative">
-        {PRICING_TIERS.map((tier) => (
+        {Object.values(PRICING_TIERS).flat().map((tier) => (
           <button
             key={tier.templates}
             onClick={() => onChange(tier.templates)}

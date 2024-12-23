@@ -5,19 +5,37 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { ALL_TEMPLATES } from './data';
+import { TEMPLATES_DATA } from './data';
+
+interface Template {
+  id: number;
+  name: string;
+  category: string;
+  price: string;
+}
 
 interface TemplateListProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
 
+const getAllTemplates = (): Template[] => {
+  let id = 1;
+  return Object.values(TEMPLATES_DATA).flat().map(name => ({
+    id: id++,
+    name,
+    category: 'Template',
+    price: '$97-$297'
+  }));
+};
+
 export function TemplateList({ open, onOpenChange }: TemplateListProps) {
   const [currentPage, setCurrentPage] = useState(0);
   const templatesPerPage = 50;
-  const totalPages = Math.ceil(ALL_TEMPLATES.length / templatesPerPage);
+  const allTemplates = getAllTemplates();
+  const totalPages = Math.ceil(allTemplates.length / templatesPerPage);
   
-  const currentTemplates = ALL_TEMPLATES.slice(
+  const currentTemplates = allTemplates.slice(
     currentPage * templatesPerPage,
     (currentPage + 1) * templatesPerPage
   );
@@ -28,7 +46,7 @@ export function TemplateList({ open, onOpenChange }: TemplateListProps) {
         <div className="px-6 py-4 border-b">
           <DialogTitle className="text-xl sm:text-2xl font-bold text-gray-900">All Templates</DialogTitle>
           <p className="text-xs sm:text-sm text-gray-500 mt-1">
-            Showing {currentPage * templatesPerPage + 1}-{Math.min((currentPage + 1) * templatesPerPage, ALL_TEMPLATES.length)} of {ALL_TEMPLATES.length} templates
+            Showing {currentPage * templatesPerPage + 1}-{Math.min((currentPage + 1) * templatesPerPage, allTemplates.length)} of {allTemplates.length} templates
           </p>
         </div>
         

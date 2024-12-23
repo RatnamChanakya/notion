@@ -4,8 +4,10 @@ import { HeroBadge } from './hero-badge';
 import { HeroBenefits } from './hero-benefits';
 import { HeroCTA } from './hero-cta';
 import { HeroSteps } from './hero-steps';
-import { SocialProof } from './social-proof';
 import { staggerChildren, fadeIn } from './animations';
+import { CustomImgProps } from '../../types';
+
+const ImageWithFetchPriority = (props: CustomImgProps) => <img {...props} />;
 
 export function HeroSection() {
   return (
@@ -56,7 +58,7 @@ export function HeroSection() {
             <div className="absolute inset-0">
               {/* Placeholder blur */}
               <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-violet-600/10 animate-pulse" />
-              <img
+              <ImageWithFetchPriority
                 src="https://storage.googleapis.com/msgsndr/0iO3mS8O2ALa5vmXwP3d/media/676444e39b7d9ab527f39056.jpeg"
                 alt="Notion Template Dashboard"
                 className="w-full h-full object-contain"

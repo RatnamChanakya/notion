@@ -4,7 +4,6 @@ import { DollarSign, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PricingSelector } from './pricing-selector';
 import { PricingFeatures } from './pricing-features';
-import { RevenueCalculator } from './revenue-calculator';
 import { PRICING_TIERS, DEFAULT_TEMPLATES } from './constants';
 import { StarterPlan } from './starter-plan';
 import { trackInitiateCheckout } from '@/lib/facebook-pixel';
@@ -21,27 +20,10 @@ export function PricingSection() {
   const handlePurchaseClick = async () => {
     const tier = PRICING_TIERS[currency].find(t => t.templates === selectedTemplates) || 
       PRICING_TIERS[currency].find(t => t.templates === DEFAULT_TEMPLATES)!;
-    const contentName = `${tier.templates} Templates Package`;
-    const contentId = `templates-${tier.templates}`;
     const value = tier.price;
 
-    // Track both client-side pixel and server-side conversion
+    // Track conversion
     trackInitiateCheckout(value);
-
-    // Send server-side conversion event
-    try {
-      await trackInitiateCheckout({
-        value,
-        currency: 'USD',
-        contentName,
-        contentId,
-        userData: {
-          // We'll add user data when available
-        }
-      });
-    } catch (error) {
-      console.error('Failed to track conversion:', error);
-    }
 
     // Open payment popup
     (window as any).open_center_popup(getPabblyUrl(selectedTemplates));

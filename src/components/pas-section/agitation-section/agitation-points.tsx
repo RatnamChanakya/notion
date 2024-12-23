@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { AlertTriangle } from 'lucide-react';
 import { AGITATION_POINTS } from '../constants';
+import type { AgitationPoint } from '../types';
 
 export function AgitationPoints() {
   return (
@@ -8,7 +8,7 @@ export function AgitationPoints() {
       <h4 className="text-center text-xl text-orange-200/90 mb-8">
         The Reality of Low-Ticket Digital Products
       </h4>
-      {AGITATION_POINTS.map((point, index) => (
+      {AGITATION_POINTS.map((point: AgitationPoint, index) => (
         <motion.div
           key={index}
           initial={{ opacity: 0, y: 20 }}

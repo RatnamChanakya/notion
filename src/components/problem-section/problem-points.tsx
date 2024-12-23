@@ -1,27 +1,27 @@
-import { AlertTriangle, TrendingDown, Users } from 'lucide-react';
+import { TrendingDown, AlertTriangle, Users } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const PROBLEM_POINTS = [
   {
     icon: TrendingDown,
     title: "Canva Templates Are Dead",
-    description: "The market is completely saturated. Your $20 templates are now worth $2, with thousands of sellers racing to the bottom.",
+    description: "Your $20 templates are now worth $2. Thousands of sellers racing to the bottom.",
     color: "from-red-500/80 to-orange-600/80",
     bgGradient: "from-red-950/30 to-orange-950/20",
     borderColor: "border-red-500/20 hover:border-red-500/40"
   },
   {
-    icon: Users,
-    title: "eBooks Don't Sell Anymore",
-    description: "10,000+ sellers offering identical products. Even quality eBooks can't sell for more than $5 in today's market.",
+    icon: AlertTriangle,
+    title: "Stop Making eBooks",
+    description: "10,000+ sellers offering identical products. Even quality eBooks can't sell for more than $5.",
     color: "from-amber-400/80 to-yellow-600/80",
     bgGradient: "from-amber-950/30 to-yellow-950/20",
     borderColor: "border-amber-500/20 hover:border-amber-500/40"
   },
   {
-    icon: AlertTriangle,
+    icon: Users,
     title: "40 Hours for $2 Profit",
-    description: "You're spending weeks creating products that sell for pennies, while premium sellers make $100-$200 per sale.",
+    description: "While you work for pennies, premium sellers make $100-$200 per sale.",
     color: "from-orange-400/80 to-red-600/80",
     bgGradient: "from-orange-950/30 to-red-950/20",
     borderColor: "border-orange-500/20 hover:border-orange-500/40"

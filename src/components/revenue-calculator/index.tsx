@@ -1,16 +1,22 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { DollarSign, Calculator, ArrowRight } from 'lucide-react';
+import { Calculator, ArrowRight } from 'lucide-react';
 import { Slider } from '@/components/ui/slider';
 import { useCurrency } from '@/lib/currency-context';
 
 export function RevenueCalculator() {
-  const { currency, formatPrice } = useCurrency();
+  const { currency } = useCurrency();
   const [price, setPrice] = useState(97);
   const [dailySales, setDailySales] = useState(5);
 
   const dailyEarnings = price * dailySales;
   const monthlyEarnings = dailyEarnings * 30;
+  
+  const formatCurrency = (amount: number): string => {
+    return currency === 'USD' 
+      ? `$${amount.toLocaleString()}`
+      : `₹${(amount * 83.16).toLocaleString()}`;
+  };
 
   return (
     <section className="relative bg-[#030712] py-20 overflow-hidden">
@@ -96,7 +102,7 @@ export function RevenueCalculator() {
                 >
                   <div className="text-sm text-gray-400 mb-1">Daily Revenue</div>
                   <div className="text-2xl font-bold text-white">
-                    ${dailyEarnings.toLocaleString()}
+                    {formatCurrency(dailyEarnings)}
                   </div>
                 </motion.div>
 
@@ -108,7 +114,7 @@ export function RevenueCalculator() {
                 >
                   <div className="text-sm text-white/90 mb-1">Monthly Revenue</div>
                   <div className="text-3xl font-bold">
-                    ${monthlyEarnings.toLocaleString()}
+                    {formatCurrency(monthlyEarnings)}
                   </div>
                 </motion.div>
               </div>

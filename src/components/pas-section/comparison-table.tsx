@@ -85,10 +85,8 @@ export function ComparisonTable() {
             key={index}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="hidden sm:block"
             viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            className="group grid grid-cols-2 border-t border-pink-500/20"
+            className="grid grid-cols-2 border-t border-pink-500/20"
           >
             <div className="relative p-3 sm:p-4 md:p-6 bg-red-950/30">
               <div className="relative z-10 flex items-center gap-2 sm:gap-3 md:gap-4">
