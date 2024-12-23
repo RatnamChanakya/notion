@@ -37,15 +37,8 @@ const TABLE_DATA = [
 export function ComparisonTable() {
   return (
     <div className="relative">
-      {/* Animated background gradients */}
-      <motion.div 
-        animate={{ 
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.2, 0.3],
-        }}
-        transition={{ duration: 8, repeat: Infinity }}
-        className="absolute -inset-x-4 -inset-y-4 bg-gradient-to-b from-red-500/5 via-transparent to-emerald-500/5 blur-2xl"
-      />
+      {/* Static background gradient */}
+      <div className="absolute -inset-x-4 -inset-y-4 bg-gradient-to-b from-red-500/5 via-transparent to-emerald-500/5 blur-2xl opacity-25" />
       
       <div className="relative overflow-hidden rounded-xl border border-pink-500/20 backdrop-blur-sm">
         {/* Table Header */}
@@ -99,8 +92,8 @@ export function ComparisonTable() {
               </div>
               <motion.div 
                 initial={{ opacity: 0 }}
-                whileHover={{ opacity: 1 }}
-                className="absolute inset-0 bg-gradient-to-r from-red-500/0 via-red-500/5 to-red-500/0"
+                animate={{ opacity: 1 }}
+                className="absolute inset-0 bg-gradient-to-r from-red-500/0 via-red-500/5 to-red-500/0 opacity-0 group-hover:opacity-100 transition-opacity"
               />
             </div>
             
@@ -115,8 +108,8 @@ export function ComparisonTable() {
               </div>
               <motion.div 
                 initial={{ opacity: 0 }}
-                whileHover={{ opacity: 1 }}
-                className="absolute inset-0 bg-gradient-to-r from-emerald-100/0 via-emerald-100/50 to-emerald-100/0"
+                animate={{ opacity: 1 }}
+                className="absolute inset-0 bg-gradient-to-r from-emerald-100/0 via-emerald-100/50 to-emerald-100/0 opacity-0 group-hover:opacity-100 transition-opacity"
               />
             </div>
           </motion.div>
